@@ -1,5 +1,5 @@
 """ 
-A basic pygame template
+My CPT
 """
  
 import pygame
