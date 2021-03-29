@@ -1,51 +1,58 @@
-""" 
-My CPT
 """
+-------------------------------------------------------------------------------
+Name:   main.py
+Purpose:  Multiple choice quiz on ICS20 course material
  
-import pygame
+Author: Yao.T
  
-# Define some colors
-BLACK    = (   0,   0,   0)
-WHITE    = ( 255, 255, 255)
-GREEN    = (   0, 255,   0)
-RED      = ( 255,   0,   0)
- 
-pygame.init()
-  
-# Set the width and height of the screen [width, height]
-size = (700, 500)
-screen = pygame.display.set_mode(size)
- 
-pygame.display.set_caption("My Game")
- 
-#Loop until the user clicks the close button.
-done = False
- 
-# Used to manage how fast the screen updates
-clock = pygame.time.Clock()
- 
-# -------- Main Program Loop -----------
-while not done:
-    # --- Main event loop
-    for event in pygame.event.get(): # User did something
-        if event.type == pygame.QUIT: # If user clicked close
-            done = True # Flag that we are done so we exit this loop
-  
-    # --- Game logic should go here
- 
-    # --- Drawing code should go here
+Created:  26/03/2021
+------------------------------------------------------------------------------
+"""
+
+#import modules
+import random 
+import time 
+
+#main function
+def main():
+    #set up 
+    inputError = False
+    wrongChoices = 0
+   # time.sleep(1.25)
+    print("\n********* ICS20 COURSE REVIEW QUIZ *********")
+   # time.sleep(1)
+    print("\nWhat units would you like to be tested on? You can choose one, two, or all the units. Type the numbers assigned to the units you want. \nExample: programming basics + control structures = 23, understanding Computers + Control Structures = 13 ")
+   # time.sleep(5)
+    print("\n(1) understanding Computers")
+   # time.sleep(1)
+    print("(2) Programming Basics")
+   # time.sleep(1)
+    print("(3) Control Structures")
+   # time.sleep(1)
+    #lock user into picking 1, 2, 3
+    while True: 
+        units = input("\nEnter the units you would like: ")
+        for x in units:
+            if x != "1":
+                wrongChoices += 1
+            if x != "2":
+                wrongChoices += 1
+            if x != "3":
+                wrongChoices += 1
+            if wrongChoices == 3:
+                inputError = True
+            wrongChoices = 0
+        if inputError == False:
+            break
+        inputError = False
+        
+        
      
-    # First, clear the screen to white or whatever background colour. 
-    # Don't put other drawing commands above this, or they will be erased with this command.
-    screen.fill(WHITE)
-     
-    # --- Go ahead and update the screen with what we've drawn.
-    pygame.display.flip()
- 
-    # --- Limit to 60 frames per second
-    clock.tick(60)
-     
-# Close the window and quit.
-# If you forget this line, the program will 'hang'
-# on exit if running from IDLE.
-pygame.quit()
+    
+
+            
+                
+            
+
+#call function
+main()
