@@ -13,9 +13,20 @@ Created:  26/03/2021
 import random 
 import time 
 
+#question bank
+unit1Q = ["questions"]
+unit2Q = ["questions"]
+unit3Q = ["questions"]
+
+#answer bank
+unit1A = ["answers"]
+unit2A = ["answers"]
+unit3A = ["answers"]
+
 #main function
 def main():
-    #set up 
+    #variables
+    score = 0
     inputError = False
     wrongChoices = 0
    # time.sleep(1.25)
@@ -45,12 +56,25 @@ def main():
         if inputError == False:
             break
         inputError = False
-        
-        
-     
-    
-
-            
+    #format quiz based on user input 
+    if units == "1" or units == "11":
+        print("1")
+    elif units == "2" or units == "22":
+        print("2")
+    elif units == "3" or units == "33":
+        print("3")
+    elif units == "12":
+        print("12")
+    elif units == "13":
+        print("13") 
+    elif units == "21":
+        print("21")
+    elif units == "23":
+        print("23")
+    elif units == "31":
+        print("31") 
+    elif units == "32":
+        print("32")        
                 
             
 
