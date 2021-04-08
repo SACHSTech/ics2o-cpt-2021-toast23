@@ -41,6 +41,7 @@ def main():
         units = input("\nEnter the units you would like: ")
         if units == "1" or units == "2" or units == "12" or units == "21":
             break
+        time.sleep(1)
         print("\nPlease enter 1 and/or 2.")
     #format quiz based on user input 
     #unit 1
@@ -51,16 +52,20 @@ def main():
                 continue
             usedNum.append(randomNum)
             while True:
+                time.sleep(1)
                 question = input(f"\n{unit1Q[randomNum]}\n").lower()
                 if question == "a" or question == "b" or question == "c":
                     break
+                time.sleep(1)
                 print("Enter A, B, or C.\n")
             if question == unit1A[randomNum]:
                 score += 1
-                print(f"\nCorrect! Your score is {score}/25.")
+                time.sleep(1)
+                print("\nCorrect!")
                 questionsGiven += 1
             else:
-                print(f"\nIncorrect! The answer is {unit1A[randomNum]}. Your score is {score}/25.")
+                time.sleep(1)
+                print(f"\nIncorrect! The answer is {unit1A[randomNum]}.")
                 questionsGiven += 1      
     #unit 2
     elif units == "2" or units == "22":
@@ -70,16 +75,20 @@ def main():
                 continue
             usedNum.append(randomNum)
             while True:
+                time.sleep(1)
                 question = input(f"\n{unit2Q[randomNum]}\n").lower()
                 if question == "a" or question == "b" or question == "c":
                     break 
+                time.sleep(1)
                 print("Enter A, B, or C.\n")
             if question == unit2A[randomNum]:
                 score += 1
-                print(f"\nCorrect! Your score is {score}/25.")
+                time.sleep(1)
+                print("\nCorrect!")
                 questionsGiven += 1
             else:
-                print(f"\nIncorrect! The answer is {unit2A[randomNum]}. Your score is {score}/25.")
+                time.sleep(1)
+                print(f"\nIncorrect! The answer is {unit2A[randomNum]}.")
                 questionsGiven += 1
     #unit 1 and 2 
     elif units == "12" or units == "21":
@@ -89,16 +98,20 @@ def main():
                 continue
             usedNum.append(randomNum)
             while True:
+                time.sleep(1)
                 question = input(f"\n{unit1Q[randomNum]}\n").lower()
                 if question == "a" or question == "b" or question == "c":
                     break
+                time.sleep(1)
                 print("\nEnter A, B, or C.\n")
             if question == unit1A[randomNum]:
                 score += 1
-                print(f"\nCorrect! Your score is {score}/25.")
+                time.sleep(1)
+                print("\nCorrect!")
                 questionsGiven += 1
             else:
-                print(f"\nIncorrect! The answer is {unit1A[randomNum]}. Your score is {score}/25.")
+                time.sleep(1)
+                print(f"\nIncorrect! The answer is {unit1A[randomNum]}.")
                 questionsGiven += 1
         usedNum.clear()
         questionsGiven = 0
@@ -108,27 +121,46 @@ def main():
                 continue
             usedNum.append(randomNum)
             while True:
+                time.sleep(1)
                 question = input(f"\n{unit2Q[randomNum]}\n").lower()
                 if question == "a" or question == "b" or question == "c":
                     break
+                time.sleep(1)
                 print("\nEnter A, B, or C.\n")
             if question == unit2A[randomNum]:
                 score += 1
-                print(f"\nCorrect! Your score is {score}/25.")
+                time.sleep(1)
+                print("\nCorrect!")
                 questionsGiven += 1
             else:
-                print(f"\nIncorrect! The answer is {unit2A[randomNum]}. Your score is {score}/25.")
+                time.sleep(1)
+                print(f"\nIncorrect! The answer is {unit2A[randomNum]}.")
                 questionsGiven += 1            
+    #print score
+    time.sleep(1.5)
+    print(f"\n\nYou got {score}/25!")
+    if score >= 20:
+        time.sleep(1)
+        print("\nGood job! You're an expert in computers and programming!")
+    elif score < 20 and score > 16:
+        time.sleep(1)
+        print("\nGood job! You have room for improvement!")
+    elif score <= 16:
+        time.sleep(1)
+        print("\nYikes. Please review the lessons again.")
     #prompt user if they want to do the quiz again   
     while True:    
-        restart = input("\nWould you like to try again? (yes/no): ").lower()
+        time.sleep(1)
+        restart = input("\n\nWould you like to try again? (yes/no): ").lower()
         if restart == "yes":
             main()
             break
         elif restart == "no":
+            time.sleep(1)
             print("\nHave a good day!")
             break
         else:
+            time.sleep(1)
             print("\nPlease type in either yes or no.\n")
 
 
