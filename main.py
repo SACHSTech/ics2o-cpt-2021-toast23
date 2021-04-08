@@ -163,7 +163,5 @@ def main():
             time.sleep(1)
             print("\nPlease type in either yes or no.\n")
 
-
-
 #call function
 main()
